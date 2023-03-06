@@ -5,7 +5,9 @@ import AuthPage from "../AuthPage/AuthPage";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
+import Collections from "../Collections/Collections";
 import { getUser } from "../../utilities/users-service";
+import DetailPage from "../DetailPage/DetailPage";
 
 function App() {
   const [user, setUser] = useState(getUser);
@@ -19,6 +21,8 @@ function App() {
             <Route path="/" element={<h1>ROOT</h1>} />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/collections/:endpoint" element={<DetailPage />} />
           </Routes>
         </>
       ) : (
